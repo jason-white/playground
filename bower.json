@@ -1,0 +1,25 @@
+{
+  "name": "lacroix",
+  "authors": [
+    "jason-white <jasonawhite@gmail.com>"
+  ],
+  "description": "meh",
+  "main": "index.html",
+  "keywords": [
+    "sassy"
+  ],
+  "license": "MIT",
+  "homepage": "jasonwhite.us",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "typi": "^2.2.3",
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.0"
+  }
+}

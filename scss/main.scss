@@ -1,0 +1,116 @@
+@import "../bower_components/susy/sass/susy";
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../bower_components/typi/scss/typi";
+@import "mixins";
+
+//Susy grid settings map 
+$susy: (
+  columns: 12,
+  math: fluid,
+  gutters: .25,
+);
+
+//Typi breakpoint map
+$breakpoints: (
+  small: 800px,
+  large: 1200px
+);
+
+//Typi settings map
+$typi: (
+  null: (16px, 1.5),
+  small: 18px,
+  large: 20px
+);
+
+$mobile: 400px 860px;
+
+//Box-sizing set to border-box for everything
+//And Typi Base
+html {
+  box-sizing: border-box;
+  @include typi-base();
+  height: 100%;
+}
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+.outer {
+  @include container(100vw);
+  padding: 2.5rem 0;
+}
+
+  .inner {
+    @include container(48rem);
+    padding: 0 1rem;
+  }
+
+.btn {
+  appearance: none;
+  cursor: pointer;
+  background: skyblue;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  padding: .3rem .6rem;
+  border: 0;
+  box-shadow: 0px 3px 8px rgba(#333, 0.5);
+  transition: background .2s linear;
+  &:active {
+    transform: translate(0, 1px);
+    box-shadow: 0px 1px 5px rgba(#333, 0.8);
+  }
+  &:hover {
+    background: tomato;
+  }
+}
+
+header {
+  background: skyblue;
+}
+
+footer {
+  background: #3c3c3c;
+  color: white;
+}
+
+.book {
+  @include span(4 of 12);
+  img {
+    box-shadow: 0px 3px 8px rgba(#333, 0.5);
+  }
+  @include breakpoint($mobile) {
+    @include span(12 of 12);
+  }
+}
+
+.info {
+  @include span(5 of 12);
+  @include breakpoint($mobile) {
+    @include span(12 of 12);
+  }
+}
+
+.purchase {
+  @include span(4 of 12);
+  @include vlist;
+  @include breakpoint($mobile) {
+    @include span(12 of 12);
+  }
+}
+
+.copyright {
+  @include span(8 of 12 last);
+  @include breakpoint($mobile) {
+    @include span(12 of 12);
+  }
+}
