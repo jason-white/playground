@@ -23,94 +23,109 @@ $typi: (
   large: 20px
 );
 
-$mobile: 400px 860px;
+//Site breakpoints
+$mobile: max-width 600px;
 
 //Box-sizing set to border-box for everything
 //And Typi Base
-html {
-  box-sizing: border-box;
-  @include typi-base();
+html,
+input,
+label,
+textarea {
+  box-sizing: border-box; 
   height: 100%;
+  @include typi-base();
 }
-
+  
   *,
   *:before,
   *:after {
-    box-sizing: inherit; }
+    box-sizing: inherit;
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		-webkit-margin-start: 0;
+		-webkit-margin-end: 0;
+		-webkit-padding-start: 0;
+ }
 
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  padding: 0 12px;
 }
 
-.outer {
-  @include container(100vw);
-  padding: 2.5rem 0;
+
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
 }
 
-  .inner {
-    @include container(48rem);
-    padding: 0 1rem;
-  }
+p {
+  margin-bottom: vr(1);
+}
+
+.rapper {
+  @include container(960px);
+}
+
+.valign {
+  display: flex;
+  align-items: center;
+}
 
 .btn {
+  width: 75px;
   appearance: none;
-  cursor: pointer;
-  background: skyblue;
   border-radius: 3px;
-  outline: none;
-  color: #fff;
-  padding: .3rem .6rem;
-  border: 0;
-  box-shadow: 0px 3px 8px rgba(#333, 0.5);
-  transition: background .2s linear;
+  border: none;
+  background: seagreen;
+  color: salmon;
+  padding: 5px 15px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
   &:active {
-    transform: translate(0, 1px);
-    box-shadow: 0px 1px 5px rgba(#333, 0.8);
+    transform: translate(1px, 1px);
   }
+}
+
+a {
+  text-decoration: none;
+  color: tomato;
+  transition: color .2s ease;
   &:hover {
-    background: tomato;
+    color: seagreen;
   }
 }
 
-header {
-  background: skyblue;
-}
-
-footer {
-  background: #3c3c3c;
-  color: white;
-}
-
-.book {
-  @include span(4 of 12);
-  img {
-    box-shadow: 0px 3px 8px rgba(#333, 0.5);
-  }
-  @include breakpoint($mobile) {
-    @include span(12 of 12);
-  }
-}
-
-.info {
-  @include span(5 of 12);
-  @include breakpoint($mobile) {
-    @include span(12 of 12);
+/* Navigation */
+nav {
+  margin-top: 50px;
+  @include container(960px);
+  font-size: vr(.6);
+  > ul {
+    @include span (6 of 12 first);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    @include susy-breakpoint($mobile) {
+      @include span (12 of 12);
+    }
+    > li {
+      display: inline-block;
+      flex: 1 0 auto;
+    }
   }
 }
 
-.purchase {
-  @include span(4 of 12);
-  @include vlist;
-  @include breakpoint($mobile) {
-    @include span(12 of 12);
-  }
-}
-
-.copyright {
-  @include span(8 of 12 last);
-  @include breakpoint($mobile) {
-    @include span(12 of 12);
+article {
+  @include container(960px);
+  > h2 {
+    margin-bottom: vr(1);
+    font-weight: 100;
   }
 }
