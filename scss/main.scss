@@ -8,6 +8,10 @@ $susy: (
   columns: 12,
   math: fluid,
   gutters: .25,
+	debug: (
+			image: hide,
+			color: lightgray,
+		),
 );
 
 //Typi breakpoint map
@@ -53,7 +57,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
-  padding: 0 12px;
 }
 
 
@@ -69,7 +72,11 @@ p {
 }
 
 .rapper {
-  @include container(960px);
+  @include container(800px);
+  padding: 0 12px;
+  &-wide {
+    @include container(960px);
+  }
 }
 
 .valign {
@@ -106,7 +113,7 @@ a {
 /* Navigation */
 nav {
   margin-top: 50px;
-  @include container(960px);
+  @include container();
   font-size: vr(.6);
   > ul {
     @include span (6 of 12 first);
@@ -121,16 +128,13 @@ nav {
       flex: 1 0 auto;
       > a {
         color: midnightblue;
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
 }
 
 article {
-  @include container(960px);
+  @include container();
   margin-bottom: vr(2);
   > h2 {
     margin-bottom: vr(1);
@@ -159,6 +163,32 @@ article {
       &:last-of-type {
         padding-right: 0;
       }
+    }
+  }
+}
+
+footer {
+  background: #3c3c3c;
+  color: #f4f4f4;
+  padding: vr(2) 0;
+  ul {
+    @include span(3);
+    @include susy-breakpoint($mobile) {
+			@include span(6 first);
+		}
+    padding: none;
+    list-style: none;
+  }
+  p {
+    @include span(6 first);
+    @include susy-breakpoint($mobile) {
+      @include span(12);
+    }
+  }
+  img {
+    @include span(3 last);
+    @include susy-breakpoint($mobile) {
+      @include span(6 last);
     }
   }
 }
