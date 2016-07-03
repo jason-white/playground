@@ -49,6 +49,7 @@ textarea {
  }
 
 body {
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
@@ -118,14 +119,46 @@ nav {
     > li {
       display: inline-block;
       flex: 1 0 auto;
+      > a {
+        color: midnightblue;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
 
 article {
   @include container(960px);
+  margin-bottom: vr(2);
   > h2 {
     margin-bottom: vr(1);
     font-weight: 100;
+  }
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: gray;
+    transition: color .2s ease;
+    &:hover {
+      color: dimgray;
+    }
+  }
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    > li {
+      display: inline-block;
+      flex: 1 0 auto;
+      padding-right: 1em;
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
   }
 }
