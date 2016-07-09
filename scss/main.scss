@@ -1,5 +1,6 @@
 @import "../bower_components/susy/sass/susy";
 @import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../bower_components/modular-scale/stylesheets/modular-scale";
 @import "../bower_components/typi/scss/typi";
 @import "mixins";
 
@@ -20,11 +21,25 @@ $breakpoints: (
   large: 1200px
 );
 
+$ms-base: 1em;
+
 //Typi settings map
 $typi: (
   null: (16px, 1.5),
   small: 18px,
   large: 20px
+);
+
+$h1: (
+  null: ms(2)
+);
+
+$h2: (
+  null: ms(1)
+);
+
+$h3: (
+  null: ms(0)
 );
 
 //Site breakpoints
@@ -59,7 +74,23 @@ body {
   height: 100%;
 }
 
+h1, .alpha {
+  @include typi($h1);
+  color: crimson;
+  font-weight: 400;
+}
 
+h2, .beta {
+  @include typi($h2);
+  color: skyblue;
+  font-weight: 100;
+}
+
+h3, .gamma {
+  @include typi($h3);
+  color: seagreen;
+  font-weight: 600;
+}
 
 img {
   width: 100%;
@@ -136,10 +167,6 @@ nav {
 article {
   @include container();
   margin-bottom: vr(2);
-  > h2 {
-    margin-bottom: vr(1);
-    font-weight: 100;
-  }
 }
 
 .meta {
@@ -170,14 +197,13 @@ article {
 footer {
   background: #3c3c3c;
   color: #f4f4f4;
-  padding: vr(2) 0;
+  padding: vr(2) 12px;
   ul {
     @include span(3);
+    @include vlist;
     @include susy-breakpoint($mobile) {
 			@include span(6 first);
 		}
-    padding: none;
-    list-style: none;
   }
   p {
     @include span(6 first);

@@ -21,5 +21,8 @@
     "typi": "^2.2.3",
     "susy": "^2.2.12",
     "breakpoint-sass": "^2.7.0"
+  },
+  "devDependencies": {
+    "modular-scale": "^2.1.3"
   }
 }
