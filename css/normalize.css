@@ -149,16 +149,18 @@ dfn {
  * `article` contexts in Chrome, Firefox, and Safari.
  */
 
+/*******************
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
+*******************/
 
 /**
  * Correct the line-height for all headings in Chrome mobile, Firefox,
  * iOS Safari, Microsoft Edge and IE.
  */
-
+/*********** Don't Need These ************
 h1,
 h2,
 h3,
@@ -167,6 +169,7 @@ h5,
 h6 {
   line-height: 1.15;
 }
+******************************************/
 
 /**
  * Add the correct background and color in IE 9-.

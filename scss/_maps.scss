@@ -1,0 +1,49 @@
+//Susy grid settings map 
+$susy: (
+  columns: 12,
+  math: fluid,
+  gutters: .25,
+	debug: (
+			image: hide,
+			color: lightgray,
+		),
+);
+
+//Typi breakpoint map
+$breakpoints: (
+  small: 800px,
+  large: 1200px
+);
+
+$ms-base: 1em;
+
+//Typi settings map
+$typi: (
+  null: (16px, 1.5),
+  small: 18px,
+  large: 20px
+);
+
+$h1: (
+  null: (ms(2), 1.5)
+);
+
+$h2: (
+  null: (ms(1), 1.5)
+);
+
+$h3: (
+  null: (ms(0), 1.5)
+);
+
+$h4: (
+  null: ms(-1)
+);
+
+$h5: (
+  null: ms(-2)
+);
+
+$h6: (
+  null: ms(-3)
+);

@@ -3,54 +3,12 @@
 @import "../bower_components/modular-scale/stylesheets/modular-scale";
 @import "../bower_components/typi/scss/typi";
 @import "mixins";
-
-//Susy grid settings map 
-$susy: (
-  columns: 12,
-  math: fluid,
-  gutters: .25,
-	debug: (
-			image: hide,
-			color: lightgray,
-		),
-);
-
-//Typi breakpoint map
-$breakpoints: (
-  small: 800px,
-  large: 1200px
-);
-
-$ms-base: 1em;
-
-//Typi settings map
-$typi: (
-  null: (16px, 1.5),
-  small: 18px,
-  large: 20px
-);
-
-$h1: (
-  null: ms(2)
-);
-
-$h2: (
-  null: ms(1)
-);
-
-$h3: (
-  null: ms(0)
-);
-
-//Site breakpoints
-$mobile: max-width 600px;
+@import "maps";
+@import "variables";
 
 //Box-sizing set to border-box for everything
 //And Typi Base
-html,
-input,
-label,
-textarea {
+html {
   box-sizing: border-box; 
   height: 100%;
   @include typi-base();
@@ -71,7 +29,17 @@ body {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
   height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: vr(1);
 }
 
 h1, .alpha {
@@ -99,7 +67,7 @@ img {
 }
 
 p {
-  margin-bottom: vr(1);
+  margin-bottom: vr(.5);
 }
 
 .rapper {
