@@ -44,7 +44,6 @@ h6 {
 
 h1, .alpha {
   @include typi($h1);
-  color: crimson;
   font-weight: 400;
 }
 
@@ -111,7 +110,7 @@ a {
 
 /* Navigation */
 nav {
-  margin-top: 50px;
+  margin: 50px 0;
   @include container();
   font-size: vr(.6);
   > ul {
